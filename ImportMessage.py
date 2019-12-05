@@ -60,7 +60,12 @@ def MessageClassifier(messages):
         else:
             bin_type.append(messages[i])
 
-    return text_type, mixed_type, bin_type
+    text_tmp_type = []
+    for i in range(len(text_type)):
+        if len(text_type[i]) <= 500:
+            text_tmp_type.append(text_type[i])
+
+    return text_tmp_type, mixed_type, bin_type
 
 if __name__ == '__main__':
     a = import_file('S7_1.pcap')

@@ -98,7 +98,7 @@ if __name__ == '__main__':
     b = ImportMessage.import_file('http.pcap')
     c = a + b
     text_type, mixed_type, bin_type = ImportMessage.MessageClassifier(c)
-    close_ngram = get_close_ngram(bin_type,'bin',4,7,10,0.2)
+    close_ngram = get_close_ngram(text_type,'text',4,7,10,0.4)
     print(len(close_ngram))
     for i in range(len(close_ngram)):
         print(close_ngram[i])
